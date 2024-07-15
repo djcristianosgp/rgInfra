@@ -1,0 +1,57 @@
+﻿@page "/listadepedidos"
+
+<PageTitle>Lista de Pedidos</PageTitle>
+
+
+<h3>ListagemDePedidos</h3>
+
+
+@if (listagem == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Colaborador</th>
+                <th>Pedido</th>
+                <th>Confirmado</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var lista in listagem)
+            {
+                <tr>
+                    <td>@lista.data_pedido.ToShortDateString()</td>
+                    <td>@lista.colaborador</td>
+                    <td>@lista.pedido</td>
+                   <td> <button>@lista.confirmado</button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+   private ListagemDePedidosViewModel[] listagem;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Simulate asynchronous loading to demonstrate streaming rendering
+        await Task.Delay(500);
+
+        var startDate = DateTime.Now;
+        var summaries = new[] { "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" };
+        listagem = Enumerable.Range(1, 5).Select(index => new ListagemDePedidosViewModel
+            {
+                data_pedido = startDate.AddDays(index),
+                colaborador = "Cristiano",
+                pedido = "PÃO DE SAL",
+                confirmado = "False"
+            }).ToArray();
+    }
+
+}
