@@ -1,0 +1,52 @@
+﻿@page "/loginusuario"
+
+@inject NavigationManager Navigation
+@inject HttpClient Http
+
+<EditForm Model="@loginRequestModel" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+
+    <div class="login-container">
+        <h3>Login</h3>
+
+        <div class="form-group">
+            <label for="login">Email</label>
+            <InputText id="login" class="form-control" @bind-Value="loginRequestModel.login" />
+            <ValidationMessage For="@(() => loginRequestModel.login)" />
+        </div>
+
+        <div class="form-group">
+            <label for="senha">Senha</label>
+            <InputText id="senha" type="password" class="form-control" @bind-Value="loginRequestModel.senha" />
+            <ValidationMessage For="@(() => loginRequestModel.senha)" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Login</button>
+    </div>
+</EditForm>
+
+@code {
+    private LoginApiViewModel.RequestLogin loginRequestModel = new LoginApiViewModel.RequestLogin();
+    private LoginApiViewModel.ResponseLogin loginResponseModel = new LoginApiViewModel.ResponseLogin();
+    private DadosUsuarioViewModel.RequestDadosUsuario dadosUsuarioRequestModel = new DadosUsuarioViewModel.RequestDadosUsuario();
+    private DadosUsuarioViewModel.ResponseDadosUsuario dadosUsuarioResponseModel = new DadosUsuarioViewModel.ResponseDadosUsuario();
+
+    private async Task HandleValidSubmit()
+    {
+        if (!String.IsNullOrWhiteSpace(loginRequestModel.login) && !String.IsNullOrWhiteSpace(loginRequestModel.senha))
+        {
+            var response = await Http.PostAsJsonAsync("https://service-identidadeapi.azurewebsites.net/api/auth/login", loginRequestModel);
+            if (response.IsSuccessStatusCode)
+            {
+                var result = await response.Content.ReadFromJsonAsync<LoginApiViewModel.ResponseLogin>();
+                // Handle the login response, e.g., store tokens, redirect, etc.
+                Navigation.NavigateTo("/home");
+            }
+            else
+            {
+                // Handle login failure
+                Console.WriteLine("Login failed");
+            }
+        }
+    }
+}
