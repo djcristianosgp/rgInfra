@@ -1,8 +1,8 @@
-﻿using LanchesMac.Context;
-using LanchesMac.Models;
-using LanchesMac.Repositories.Interfaces;
+﻿using rginfra.Context;
+using rginfra.Models;
+using rginfra.Repositories.Interfaces;
 
-namespace LanchesMac.Repositories;
+namespace rginfra.Repositories;
 
 public class PedidoRepository : IPedidoRepository
 {

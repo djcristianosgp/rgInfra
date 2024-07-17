@@ -1,7 +1,7 @@
-﻿using LanchesMac.Areas.Admin.Servicos;
+﻿using rginfra.Areas.Admin.Servicos;
 using Microsoft.AspNetCore.Mvc;
 
-namespace LanchesMac.Areas.Admin.Controllers
+namespace rginfra.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class AdminGraficoController : Controller

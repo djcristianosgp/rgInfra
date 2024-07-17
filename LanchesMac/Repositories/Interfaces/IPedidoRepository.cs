@@ -1,6 +1,6 @@
-﻿using LanchesMac.Models;
+﻿using rginfra.Models;
 
-namespace LanchesMac.Repositories.Interfaces
+namespace rginfra.Repositories.Interfaces
 {
     public interface IPedidoRepository
     {

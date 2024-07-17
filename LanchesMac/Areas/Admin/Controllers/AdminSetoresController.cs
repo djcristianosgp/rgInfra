@@ -8,22 +8,22 @@ namespace rginfra.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Authorize(Roles="Admin")]
-    public class AdminCategoriasController : Controller
+    public class AdminSetoresController : Controller
     {
         private readonly AppDbContext _context;
 
-        public AdminCategoriasController(AppDbContext context)
+        public AdminSetoresController(AppDbContext context)
         {
             _context = context;
         }
 
-        // GET: Admin/AdminCategorias
+        // GET: Admin/AdminSetores
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Categorias.ToListAsync());
+            return View(await _context.Setores.ToListAsync());
         }
 
-        // GET: Admin/AdminCategorias/Details/5
+        // GET: Admin/AdminSetores/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -31,39 +31,39 @@ namespace rginfra.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var categoria = await _context.Categorias
-                .FirstOrDefaultAsync(m => m.CategoriaId == id);
-            if (categoria == null)
+            var setor = await _context.Setores
+                .FirstOrDefaultAsync(m => m.SetorId == id);
+            if (setor == null)
             {
                 return NotFound();
             }
 
-            return View(categoria);
+            return View(setor);
         }
 
-        // GET: Admin/AdminCategorias/Create
+        // GET: Admin/AdminSetores/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Admin/AdminCategorias/Create
+        // POST: Admin/AdminSetores/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CategoriaId,CategoriaNome,Descricao")] Categoria categoria)
+        public async Task<IActionResult> Create([Bind("SetorId,DescricaoSetor,Ativo")] Setor setor)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(categoria);
+                _context.Add(setor);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(categoria);
+            return View(setor);
         }
 
-        // GET: Admin/AdminCategorias/Edit/5
+        // GET: Admin/AdminSetores/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -71,22 +71,22 @@ namespace rginfra.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var categoria = await _context.Categorias.FindAsync(id);
-            if (categoria == null)
+            var setor = await _context.Setores.FindAsync(id);
+            if (setor == null)
             {
                 return NotFound();
             }
-            return View(categoria);
+            return View(setor);
         }
 
-        // POST: Admin/AdminCategorias/Edit/5
+        // POST: Admin/AdminSetores/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CategoriaId,CategoriaNome,Descricao")] Categoria categoria)
+        public async Task<IActionResult> Edit(int id, [Bind("setorId,setorNome,Descricao")] Setor setor)
         {
-            if (id != categoria.CategoriaId)
+            if (id != setor.SetorId)
             {
                 return NotFound();
             }
@@ -95,12 +95,12 @@ namespace rginfra.Areas.Admin.Controllers
             {
                 try
                 {
-                    _context.Update(categoria);
+                    _context.Update(setor);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CategoriaExists(categoria.CategoriaId))
+                    if (!setorExists(setor.SetorId))
                     {
                         return NotFound();
                     }
@@ -111,10 +111,10 @@ namespace rginfra.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(categoria);
+            return View(setor);
         }
 
-        // GET: Admin/AdminCategorias/Delete/5
+        // GET: Admin/AdminSetores/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -122,30 +122,30 @@ namespace rginfra.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var categoria = await _context.Categorias
-                .FirstOrDefaultAsync(m => m.CategoriaId == id);
-            if (categoria == null)
+            var setor = await _context.Setores
+                .FirstOrDefaultAsync(m => m.SetorId == id);
+            if (setor == null)
             {
                 return NotFound();
             }
 
-            return View(categoria);
+            return View(setor);
         }
 
-        // POST: Admin/AdminCategorias/Delete/5
+        // POST: Admin/AdminSetores/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var categoria = await _context.Categorias.FindAsync(id);
-            _context.Categorias.Remove(categoria);
+            var setor = await _context.Setores.FindAsync(id);
+            _context.Setores.Remove(setor);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CategoriaExists(int id)
+        private bool setorExists(int id)
         {
-            return _context.Categorias.Any(e => e.CategoriaId == id);
+            return _context.Setores.Any(e => e.SetorId == id);
         }
     }
 }

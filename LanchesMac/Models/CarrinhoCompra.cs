@@ -1,7 +1,7 @@
-﻿using LanchesMac.Context;
+﻿using rginfra.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace LanchesMac.Models
+namespace rginfra.Models
 {
     public class CarrinhoCompra
     {

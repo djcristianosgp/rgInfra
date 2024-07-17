@@ -1,12 +1,12 @@
-﻿using LanchesMac.Context;
-using LanchesMac.Models;
-using LanchesMac.ViewModels;
+﻿using rginfra.Context;
+using rginfra.Models;
+using rginfra.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ReflectionIT.Mvc.Paging;
 
-namespace LanchesMac.Areas.Admin.Controllers
+namespace rginfra.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Authorize(Roles = "Admin")]

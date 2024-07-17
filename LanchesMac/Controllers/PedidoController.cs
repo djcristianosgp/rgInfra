@@ -1,9 +1,9 @@
-﻿using LanchesMac.Models;
-using LanchesMac.Repositories.Interfaces;
+﻿using rginfra.Models;
+using rginfra.Repositories.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace LanchesMac.Controllers;
+namespace rginfra.Controllers;
 
 public class PedidoController : Controller
 {

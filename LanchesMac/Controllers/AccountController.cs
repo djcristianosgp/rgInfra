@@ -1,9 +1,9 @@
-﻿using LanchesMac.ViewModels;
+﻿using rginfra.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace LanchesMac.Controllers;
+namespace rginfra.Controllers;
 
 [Authorize]
 public class AccountController : Controller

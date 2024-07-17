@@ -1,9 +1,9 @@
-﻿using LanchesMac.Models;
+﻿using rginfra.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
-namespace LanchesMac.Areas.Admin.Controllers
+namespace rginfra.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Authorize(Roles = "Admin")]

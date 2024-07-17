@@ -1,10 +1,10 @@
-﻿using LanchesMac.Models;
-using LanchesMac.Repositories.Interfaces;
-using LanchesMac.ViewModels;
+﻿using rginfra.Models;
+using rginfra.Repositories.Interfaces;
+using rginfra.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace LanchesMac.Controllers;
+namespace rginfra.Controllers;
 
 public class CarrinhoCompraController : Controller
 {

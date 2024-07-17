@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace LanchesMac.Models;
+namespace rginfra.Models;
 
 public class PedidoDetalhe
 {

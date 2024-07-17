@@ -1,9 +1,9 @@
-using LanchesMac.Areas.Admin.Servicos;
-using LanchesMac.Context;
-using LanchesMac.Models;
-using LanchesMac.Repositories;
-using LanchesMac.Repositories.Interfaces;
-using LanchesMac.Services;
+using rginfra.Areas.Admin.Servicos;
+using rginfra.Context;
+using rginfra.Models;
+using rginfra.Repositories;
+using rginfra.Repositories.Interfaces;
+using rginfra.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using ReflectionIT.Mvc.Paging;

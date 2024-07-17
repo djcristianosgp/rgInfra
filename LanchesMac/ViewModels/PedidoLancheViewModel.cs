@@ -1,6 +1,6 @@
-﻿using LanchesMac.Models;
+﻿using rginfra.Models;
 
-namespace LanchesMac.ViewModels
+namespace rginfra.ViewModels
 {
     public class PedidoLancheViewModel
     {

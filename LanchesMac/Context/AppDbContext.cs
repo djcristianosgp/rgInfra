@@ -1,9 +1,10 @@
-﻿using LanchesMac.Models;
+﻿using rginfra.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using rginfra.Models;
 
-namespace LanchesMac.Context
+namespace rginfra.Context
 {
     public class AppDbContext : IdentityDbContext<IdentityUser>
     {
@@ -15,5 +16,7 @@ namespace LanchesMac.Context
         public DbSet<CarrinhoCompraItem> CarrinhoCompraItens { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<PedidoDetalhe> PedidoDetalhes { get; set; }
+        public DbSet<Setor> Setores { get; set; }
+        public DbSet<Colaborador> Colaboradores{ get; set; }
     }
 }

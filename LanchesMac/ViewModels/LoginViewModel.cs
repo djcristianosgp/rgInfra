@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace LanchesMac.ViewModels
+namespace rginfra.ViewModels
 {
     public class LoginViewModel
     {

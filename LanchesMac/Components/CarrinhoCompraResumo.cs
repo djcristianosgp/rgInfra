@@ -1,8 +1,8 @@
-﻿using LanchesMac.Models;
-using LanchesMac.ViewModels;
+﻿using rginfra.Models;
+using rginfra.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
-namespace LanchesMac.Components
+namespace rginfra.Components
 {
     public class CarrinhoCompraResumo : ViewComponent
     {

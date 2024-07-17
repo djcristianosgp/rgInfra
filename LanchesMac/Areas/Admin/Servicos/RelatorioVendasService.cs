@@ -1,8 +1,8 @@
-﻿using LanchesMac.Context;
-using LanchesMac.Models;
+﻿using rginfra.Context;
+using rginfra.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace LanchesMac.Areas.Admin.Servicos
+namespace rginfra.Areas.Admin.Servicos
 {
     public class RelatorioVendasService
     {

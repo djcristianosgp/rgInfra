@@ -1,10 +1,10 @@
-﻿using LanchesMac.Models;
-using LanchesMac.Repositories.Interfaces;
-using LanchesMac.ViewModels;
+﻿using rginfra.Models;
+using rginfra.Repositories.Interfaces;
+using rginfra.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace LanchesMac.Controllers;
+namespace rginfra.Controllers;
 
 public class HomeController : Controller
 {

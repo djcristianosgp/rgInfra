@@ -1,4 +1,4 @@
-﻿namespace LanchesMac.Models;
+﻿namespace rginfra.Models;
 
 public class FileManagerModel
 {
