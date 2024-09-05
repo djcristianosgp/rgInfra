@@ -1,0 +1,35 @@
+﻿@model rginfra.Models.Setor
+
+@{
+    ViewData["Title"] = "Create";
+}
+<h3>Criar Setores</h3>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DescricaoSetor" class="control-label"></label>
+                <input asp-for="DescricaoSetor" class="form-control" />
+                <span asp-validation-for="DescricaoSetor" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <div class="form-group col-sm-4">
+                    <label class="control-label">Ativo</label>
+                    <br />
+                    <label class="form-check-label" style="padding-left: 20px">
+                        <input class="form-check-input" asp-for="Ativo" /> @Html.DisplayNameFor(model => model.Ativo)
+                    </label>
+                </div>                
+            </div>
+            <hr />
+            <div class="form-group">
+                <input type="submit" value="Criar Setor" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-outline-info">Retornar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
