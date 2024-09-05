@@ -7,19 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Components\Pages\_Host.cshtml" />
+    <Content Remove="Pages\_Host.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Components\Pages\Cadastros\" />
-    <Folder Include="Components\Pages\Movimento\" />
+    <Folder Include="Pages\Cadastros\" />
+    <Folder Include="Pages\Movimento\" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Components\Pages\_Host.cshtml" />
+    <None Include="Pages\_Host.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Blazored.LocalStorage" Version="4.5.0" />
     <PackageReference Include="Blazorise.Bootstrap5" Version="1.5.3" />
     <PackageReference Include="Blazorise.Icons.FontAwesome" Version="1.5.3" />
   </ItemGroup>
